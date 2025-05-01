@@ -30,8 +30,8 @@ html {
     overflow-y: auto;
 }
 
-a,
-btn {
+a
+ {
     transition: all 300ms ease;
 }
 
@@ -174,10 +174,15 @@ nav {
     border-bottom-right-radius: 30px;
     margin-left: 99%;
     margin-bottom: 20px;
+ 
 }
 
+
+
+
+
 .menu-links.open {
-    max-height: 800px;
+    max-height: 100px;
     box-shadow: 0 -1px 3px 0 var(--main-color);
    
   
@@ -249,6 +254,7 @@ nav {
 .Zdjecie::before {
     content: '';
     position: absolute;
+    
     height: 100%;
     width: 100%;
     background: conic-gradient(from var(--angle), transparent 80%, var(--main-color));
@@ -313,16 +319,17 @@ nav {
 
 
 
-.I-TEX{
-    align-items: center;
+.ITEX{
+    margin-top: 50px;
     position: relative;
-    margin: auto;
-font-size: 360PX;
-z-index: -1;
-color: var(--tex-color);
-top: 50px;
-border-radius: 100%;
-transform: translateX(1px);
+    font-size: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: -999;
+    transform: translateX(1px);
+    cursor: pointer;
+    
 }
 
 
@@ -341,6 +348,7 @@ html, body {
     position: relative;
     margin: auto;
     transform: translateX(0.6px);
+    margin-top: 120px;
 }
 
 
@@ -356,117 +364,116 @@ html, body {
 
 }
 
-
-.cv-container{
-    height: 800PX;
+.cv-container {
     width: 60%;
+    max-width: 1000px;
     margin: auto;
     display: flex;
-    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 150px;
     border-radius: 30px;
     border: 2px solid var(--tex-color);
     box-shadow: 0 0 15px var(--tex-color);
-
-}
-
-.Doswiatczenie{
-    color: var(--tex-color);
-    border: 2px solid var(--main-color);
-    height: 150px;
-    width: 55%;
-
+    padding: 30px;
+    flex-wrap: wrap;
 }
 
 
-.Umiejetnosci{
-    color: var(--tex-color);
-    border: 2px solid var(--main-color);
-    height: 220px;
-    width: 55%;
-
-}
-
-.Edukacja{
-    color: var(--tex-color);
-    border: 2px solid var(--tex-color);
-    height: 200px;
-    width: 55%;
-}
-li{
-    font-size: 1rem;
-    margin-left: 20px;
-}
-p{
-    font-size: 0.8rem;
-    margin-left: 30px;
-}
-h1{
-
-    text-align: center;
-    
-}
-.Doswiatczenie{
-  
-    align-items: center;
-    position: relative;
-}
-.Edukacja{
-
-    align-items: center;
-    position: relative;
-}
-.Umiejetnosci{
-    
-    align-items: center;
-    position: relative;
-    
-}
-
-.cv-container {
+.cv-left {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; 
-    padding: 20px;
-    gap: 40px; 
-    
-  }
-  
-  .Doswiatczenie,
-  .Edukacja,
-  .Umiejetnosci {
-    text-align: left;
-    width: 40%;
-    margin-top: 30px;
-    border-radius: 15px;
-    cursor: pointer;
-    
-  }
+    align-items: center;
+    gap: 20px;
+}
 
-  
-
- .button{
-    position: relative;
-    top: -400px;
+.cv-right {
     display: flex;
-    margin-right: auto;
-    margin-left: 9%;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
 
- }
-
- .zdjecie_cv {
+.zdjecie_cv {
     width: 200px;
     height: 250px;
-    border-radius: 25px; 
+    border-radius: 25px;
     background-image: url('img22.JPG');
-    background-size: contain; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    margin-left: 27%;
-    border: 2px solid var(--main-color); 
-    transform:  translateY(-750px);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid var(--main-color);
     box-shadow: 0 0 15px var(--main-color);
 }
 
+
+
+.Doswiatczenie, .Edukacja, .Umiejetnosci {
+    width: 250px;
+    color: var(--tex-color);
+    border: 2px solid var(--main-color);
+    border-radius: 15px;
+    padding: 15px;
+    cursor: pointer;
+    background: transparent;
+    position: relative;
+}
+
+.Edukacja {
+    border-color: var(--tex-color);
+}
+
+li {
+    font-size: 1rem;
+    margin-left: 20px;
+}
+
+p {
+    font-size: 0.8rem;
+    margin-left: 30px;
+}
+
+h1.glow {
+    text-align: center;
+}
+
+
+
+
+
+@media (max-width: 1050px) {
+    .cv-container {
+        gap: 10px;          
+    }
+}
+
+
+@media (max-width: 1050px) {
+    .cv-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .zdjecie_cv {
+        display: none;
+    }
+
+    .cv-left {
+        order: 2;
+        margin-top: 20px;
+    }
+
+    .cv-right {
+        order: 1;
+        align-items: center;
+    }
+
+    .Doswiatczenie, .Edukacja, .Umiejetnosci {
+        width: 100%;
+        max-width: 90%;
+    }
+}
  
 
  .miejsce{
@@ -500,24 +507,19 @@ h1{
 
 
 
-.grid-container {
-
-    display: grid;
-    grid-auto-rows:  400px;
-    border-radius: 30px;
-    grid-auto-columns: 25%;
-    grid-template-areas: 
-        "box-1 box-2 box-3";
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
     gap: 10px;
     margin: 0 auto;
     width: fit-content;
-    transform: translateX(150px);
-
-
-    
+    border-radius: 30px;
 }
 
-.box{
+.box {
+    width: 300px; 
+   
     margin-top: 20px;
     color: var(--tex-color);
     padding: 2px;
@@ -525,12 +527,12 @@ h1{
     border: 2px solid var(--main-color);
     border-radius: 30px;
     box-shadow:
-    0 0 1px var(--main-color),
-    0 0 5px var(--main-color),
-    0 0 10px var(--main-color),
-    0 0 2px var(--main-color);
-    height: 310px;
+        0 0 1px var(--main-color),
+        0 0 5px var(--main-color),
+        0 0 10px var(--main-color),
+        0 0 2px var(--main-color);
     z-index: 1;
+    margin-bottom: 20px;
 }
 .box h1 {
     margin-top: 20px;
@@ -550,75 +552,93 @@ h1{
     0 0 5px var(--tex-color),
     0 0 10px var(--tex-color),
     0 0 2px var(--tex-color);
+    margin-bottom: 20px;
 
 }
 
 
-.kotakt{
-    justify-content: space-between;
-    height: 75px;
+.kotakt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
     background: var(--back-graundcolor);
     color: var(--tex-color);
     width: 60%;
     margin: auto;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
-    align-items: center;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 15px var(--tex-color);
-    bottom: 100%;
-}
-
-.title_inz{
-    margin-top: 80px;
-    font-size: 60px;
-    color: var(--tex-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    transform: translateX(0.6px);
-
-}
-
-.link_kont {
+    padding: 20px 0;
+    flex-wrap: wrap;
+  }
+  
+  .link_kont {
     list-style: none;
-    gap: 15%; 
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    gap: 80px; 
     padding: 0;
-    transform: translateY(10px) translateX(-29px);
-}
-
-.link_kont a {
-    text-decoration: none; 
-    font-size: 1.5rem;
-}
-
-.link_kont h2{
-    font-size: 0.8rem;
-    transform: translateY(-2px)
-}
-
-.link2{
-    transform: translateY(-10px)
-}
-
-.link_kont li:hover a,
-.link_kont li:hover h2 {
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  
+  .link_kont li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    min-width: 80px; 
+  }
+  
+  .link_kont li i {
+    font-size: 25px;
+    color: var(--tex-color);
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .link_kont li:hover i,
+  .link_kont li:hover h2 {
     color: var(--main-color);
     cursor: pointer;
     text-shadow:
-        0 0 5px var(--main-color),
-        0 0 10px var(--main-color),
-        0 0 20px var(--main-color),
-        0 0 40px var(--main-color);
-}
+      0 0 5px var(--main-color),
+      0 0 10px var(--main-color),
+      0 0 20px var(--main-color),
+      0 0 40px var(--main-color);
+  }
+  
+  .link_kont h2 {
+    font-size: 0.9rem;
+    margin: 0;
+    white-space: nowrap;
+  }
+  
 
-.box p{
-    font-size: 10px;
-    margin-top: 15px;
-    transform: translatex(-13px)
-}
+  @media (max-width: 950px) {
+    .kotakt {
+      width: 80%;
+      flex-direction: column;
+    }
+  
+    .link_kont {
+      gap: 20px;
+    }
+  }
+
+
+  @media (max-width: 650px) {
+    .kotakt {
+      width: 100%;
+      flex-direction: column;
+    }
+  
+    .link_kont {
+      gap: 20px;
+    }
+  }
+  
