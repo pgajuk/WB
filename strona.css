@@ -379,6 +379,8 @@ html, body {
     box-shadow: 0 0 15px var(--tex-color);
     padding: 30px;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
 }
 
 
