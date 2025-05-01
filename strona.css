@@ -454,6 +454,7 @@ h1.glow {
     .cv-container {
         flex-direction: column;
         align-items: center;
+         width: 80%;
     }
 
     .zdjecie_cv {
